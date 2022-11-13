@@ -1,0 +1,9 @@
+name: "clesia",
+displayName: "Clesia", 
+author: "stripey76",
+main: "clesia.Clesia",
+subtitle: " ",
+description: "Adds a new planet with its own tech tree and campaign, minimal changes to other planets. [accent]Check out our discord here: https://discord.gg/DWKPugsTMM[]",
+version: "0.0.1",
+minGameVersion: 140.4
+hidden: "false"
