@@ -1,0 +1,81 @@
+package clesia.content;
+
+import clesia.Clesia;
+import arc.graphics.Color;
+import arc.struct.Seq;
+import clesia.world.items.ClesiaItem;
+
+public class ClesiaItems {
+    public static final Seq<ClesiaItem> clesiaItems = new Seq<>(), clesiaOnlyItems = new Seq<>();
+
+    public static ClesiaItem
+            tantalum, mendelevium, tantalum-bolt, mendelevium-bolt, deskarium-bolt, rhenium-bolt,
+            deskarium, rhenium,
+            thallium, tantalum-rod;
+
+    public static void load() {
+            tantalum = new ClesiaItem("tantalum", Color.valueOf("abe0ed")){{
+            explosiveness = 0f;
+            hardness = 1.5;
+            radioactivity = 0f;
+            cost = 1.1f;
+            healthScaling = 0.9f;
+        }};
+            mendelevium = new ClesiaItem("mendelevium", Color.valueOf("4bf286")){{
+            explosiveness = 0f;
+            hardness = 1.8;
+            radioactivity = 0f;
+            cost = 0.9f;
+            healthScaling = 1.1f;
+        }};
+            deskarium = new ClesiaItem("deskarium", Color.valueOf("faa023")){{
+            explosiveness = 0.5f;
+            flammability = 0.1f;
+            hardness = 0.8;
+            radioactivity = 0f;
+            cost = 0.7f;
+            healthScaling = 0.4f;
+        }};
+            rhenium = new ClesiaItem("rhenium", Color.valueOf("8360ab")){{
+            explosiveness = 0f;
+            hardness = 1.8;
+            radioactivity = 0f;
+            cost = 1.4f;
+            healthScaling = 1.4f;
+        }};
+            thallium = new ClesiaItem("thallium", Color.valueOf("403a47")){{
+            explosiveness = 0f;
+            hardness = 1.4;
+            radioactivity = 0.4f;
+            cost = 1.8f;
+            healthScaling = 1.3f;
+        }};
+        tantalum-rod = new ClesiaItem("tantalum-rod", Color.valueOf("79a1a6")){{
+            lowPriority = true;
+            buildable = true;
+        }};
+        tantalum-bolt = new ClesiaItem("tantalum-bolt", Color.valueOf("80bdc4")){{
+            lowPriority = true;
+            buildable = false;
+        }};
+        mendelevium-bolt = new ClesiaItem("mendelevium-bolt", Color.valueOf("49995f")){{
+            lowPriority = true;
+            buildable = false;
+        }};
+        deskarium-bolt = new ClesiaItem("deskarium-bolt", Color.valueOf("998a49")){{
+            lowPriority = true;
+            buildable = false;
+        }};
+        rhenium-bolt = new ClesiaItem("rhenium-bolt", Color.valueOf("8b72ad")){{
+            lowPriority = true;
+            buildable = false;
+        }};
+
+        clesiaItems.addAll(
+        graphite, tantalum, silicon, phaseFabric, surgeAlloy, sand,
+        mendelevium, deskarium, rhenium, thallium, fissileMatter, tantalum-rod, tantalum-bolt, mendelevium-bolt, deskarium-bolt, rhenium-bolt
+        );
+
+        clesiaOnlyItems.addAll(clesiaItems).removeAll(serpuloItems);
+    }
+}
