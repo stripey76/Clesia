@@ -1,5 +1,19 @@
 package clesia;
 
+import arc.*;
+import arc.util.*;
+import mindustry.*;
+import mindustry.gen.*;
+import mindustry.mod.*;
+import mindustry.core.*;
+import mindustry.type.*;
+import mindustry.content.*;
+import mindustry.ui.fragments.*;
+import mindustry.game.EventType.*;
+import mindustry.ui.dialogs.SettingsMenuDialog.*;
+import mindustry.ui.dialogs.SettingsMenuDialog.SettingsTable.*;
+import clesia.content.*;
+import clesia.graphics.*;
 import arc.Core;
 import arc.Events;
 import arc.func.Func;
@@ -14,9 +28,6 @@ import mindustry.mod.Mods.LoadedMod;
 import clesia.content.*;
 import clesia.graphics.ClesiaShaders;
 import clesia.system.SolarSystem;
-import clesia.ui.dialogs.ClesiaDisclaimer;
-import clesia.ui.dialogs.ClesiaDiscordLink;
-import clesia.ui.OlSettings;
 
 import java.util.Random;
 
@@ -91,5 +102,7 @@ public class Omaloon extends Mod{
         ClesiaStats.load();
         ClesiaFx.load();
         ClesiaUnits.load();
+        ClesiaTechTree.load();
+        ClesiaSectors.load();
     }
 }
