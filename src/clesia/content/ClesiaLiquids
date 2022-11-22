@@ -1,0 +1,56 @@
+package clesia.content;
+
+import arc.graphics.Color;
+import arc.struct.Seq;
+import clesia.Clesia;
+import clesia.world.liquids.ClesiaLiquid;
+
+public class ClesiaLiquids {
+    public static ClesiaLiquid typhus, molten-deskarium, radon, xenon;
+
+    public static final Seq<ClesiaLiquid> ClesiaLiquid = new Seq<>();
+
+    public static void load() {
+        typhus = new ClesiaLiquid("typhus", Color.valueOf("5cb0b8")){{
+            heatCapacity = 0.4f;
+            viscosity = 0.7f;
+            temperature = 0.2f;
+            flammability = 0.7f;
+            explosiveness = 0.4f;
+            effect = StatusEffects.slowed;
+            boilPoint = 0.5f;
+            gasColor = Color.grays(0.6f);
+            barColor = Color.valueOf("5cb0b8");
+            lightColor = Color.valueOf("5cb0b8").a(0.5f);
+            capPuddles = false;
+            spreadTarget = Liquids.cryofluid;
+            moveThroughBlocks = true;
+            incinerable = true;
+            blockReactive = false;
+            boilPoint = 0.5f;
+            canStayOn.addAll(water, oil, cryofluid, slag);
+            coolant = false
+            colorFrom = Color.valueOf("5cb0b8");
+            colorTo = Color.valueOf("415f91");
+            alwaysUnlocked = true;
+        }};
+        xenon = new ClesiaLiquid("xenon", Color.valueOf("87aff5")){{
+            gas = true;
+            barColor = Color.valueOf("5878ad");
+            explosiveness = 1f;
+            flammability = 1f;
+        }};
+        radon = new ClesiaLiquid("radon", Color.valueOf("f6ff94")){{
+            gas = true;
+            barColor = Color.valueOf("dfed3e");
+            explosiveness = 0.5f;
+            flammability = 1.8f;
+        }};
+        molten-deskarium = new ClesiaLiquid("molten-deskarium", Color.valueOf("ffa166")){{
+            temperature = 1f;
+            viscosity = 0.7f;
+            effect = StatusEffects.melting;
+            lightColor = Color.valueOf("f0511d").a(0.4f);
+        }};
+    }
+}
