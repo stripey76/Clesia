@@ -1,0 +1,28 @@
+package clesia.content;
+
+import arc.graphics.*;
+import arc.util.*;
+import mindustry.gen.*;
+import mindustry.type.*;
+import mindustry.type.weather.*;
+import mindustry.world.meta.*;
+
+public class ClesiaWeathers{
+    public static ClesiaWeather
+    clesiaParticles;
+public static void load(){
+clesiaParticles = new ParticleWeather("clesia-particles"){{
+            color = noiseColor = Color.valueOf("0f872f");
+            particleRegion = "particle";
+            statusGround = false;
+            useWindVector = true;
+            hidden = false;
+            sizeMax = 7f;
+            sizeMin = 1.8f;
+            minAlpha = 0.2f;
+            maxAlpha = 0.8f;
+            density = 1000f;
+            baseSpeed = 0.1f;
+        }};
+    }
+}
